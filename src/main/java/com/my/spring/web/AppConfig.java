@@ -16,9 +16,16 @@ public class AppConfig implements WebMvcConfigurer {
 ViewContrillerRegistry
 > model없이 쓰는 view를 등록
 
-Client ▶ request (url:"/") ▶ 
-(Server)Dispatcher Servlet ("ch01/main"으로 파악) ▶ request 해석의뢰 ▶ 
-View Resolver ▶ response (prefix, suffix 붙여서) ▶ 
-Dispatcher ▶ request ▶ 
-ch01/main이름을 갖는 servlet ▶ response ▶ Client
+1. Client ▶ request (url:"/") ▶ 
+2. (Server)Dispatcher Servlet ("ch01/main"으로 파악) ▶ request 해석의뢰 ▶ 
+3. View Resolver ▶ response (prefix, suffix 붙여서) ▶ 
+4. Dispatcher ▶ viewName을 파악 후, request ▶ 
+5. ch01/main.jsp이름을 갖는 Servlet(View) ▶ response ▶ 
+6. Dispatcher Servlet ▶ response ▶ View - (WEB-INF/view/ch01/main.jsp) ▶ Client
+
+"/" url과
+"ch01/main" ViewName을
+ViewController에 등록시켜서 View로 이용하고,
+
+Handler = Controller가 갖고있는 Method이다.
 */
