@@ -9,11 +9,14 @@ public class AppConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("ch01/main"); // request url이 "/"면, ViewName을 "ch01/main"으로 설정
+		// registry.addViewController("ch02/ex03/user").setViewName("ch02/ex03/userIn");
+		// userIn과 userOut의 URL이 동일하고, UserController가 있다면, 컨트롤러를 우선적으로 실행함
+		// => UserController에 @GetMapping과 @PostMapping을 지우면 12번째줄이 실행됨
 	}
 }
 
 /*
-ViewContrillerRegistry
+ViewControllerRegistry
 > model없이 쓰는 view를 등록
 
 1. Client ▶ request (url:"/") ▶ 

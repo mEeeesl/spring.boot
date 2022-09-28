@@ -22,7 +22,7 @@ public class UserController { // ● returnType = ModelAndView , localhost/ch02/
 	
 	// view나 model 1개를 여러 핸들러가 공유(user.jsp)해서 사용가능하다.
 	// 핸들러 만드는 옛날 방법
-	@GetMapping("21") // ● returnType = String , localhost/ch02/ex01/21
+	@GetMapping("21") // ● returnType = String , view Return ,  localhost/ch02/ex01/21
 	public String handler21(Model model) { // Container가 Model Type의 객체를 만들어서 넣어줌
 		model.addAttribute("user", new User("한아름", 21));
 		return "ch02/ex01/user"; //이 값을 ViewName으로 씀
@@ -107,4 +107,5 @@ ModelAndView는 Controller(Container)가 만들어줌
 4. Dispatcher ▶ viewName을 파악 후, request ▶ 
 5. ch01/main.jsp이름을 갖는 Servlet(View) ▶ response ▶ 
 6. Dispatcher Servlet ▶ response ▶ View - (WEB-INF/view/ch01/main.jsp) ▶ Client
+
 */
