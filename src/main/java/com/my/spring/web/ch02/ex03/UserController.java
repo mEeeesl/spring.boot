@@ -5,22 +5,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("ch02.ex03")
-@RequestMapping("ch02/ex03/user") 
+@Controller("ch02.ex03") // 패키지.패키지.패키지
+@RequestMapping("ch02/ex03/user") // 폴더/폴더/폴더
 public class UserController {
 	@GetMapping 			 // <- 저기 괄호에 아무것도 안썼으니,
 	public String userIn() { // "ch02/ex03/user" = RequestMapping URL = HandlerMapping URL
 		return "ch02/ex03/userIn";
 	} // view만 원하니 returnType = String 
 	
-	@PostMapping		// ▼ request 관점에서, name,age,regDate대신, 객체를 넣었으니 Command가 되는것이다.
-	public String userOut(User user) {
+	@PostMapping		// ▼ request 관점에서, name,age,regDate대신,
+	public String userOut(User user) { // 객체를 넣었으니 Command가 되는것이다.
 		return "ch02/ex03/userOut";
 	}
-	
-	// UserController 안쓰고 Form 나오게하기
-	
-	
+	// Command 이자, Model이 됨. ('user'가 model로 자동지정 됨)
+	// Model Name = user ▶ userOut.jsp에서 출력하기위한 모델명.모델속성
 }
 
 /*

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org/DTD Mapper 3.0//EN'
+	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.my.spring.web.ch04.dao.map.EmployeeMap'>
+<!-- application.properties에서 설정한, 
+	 mybatis.type-aliases-package=com.my.spring.**.domain -->
+	<select id='selectEmployee' resultType='employee'>
+		select employee_id, last_name, hire_date
+		from employees
+		where employee_id = #{employeeId}
+	</select>
+</mapper>

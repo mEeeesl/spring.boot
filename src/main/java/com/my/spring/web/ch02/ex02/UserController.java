@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller("ch02.ex02") // BeanId 중복방지
 @RequestMapping("ch02/ex02") // ● 공통 URL
 public class UserController {
-	@GetMapping("userIn") // ● returnType = String ▶ form 이며 view만 리턴할때 (model을 리턴할 상황이 아님)
-	public String userIn() {
+	@GetMapping("userIn") 
+	public String userIn() { // ● returnType = String ▶ form 이며 view만 리턴할때 (model을 리턴할 상황이 아님)
 		return "ch02/ex02/userIn";
 	}
 	/*
@@ -35,7 +35,7 @@ public class UserController {
 		model.addAttribute("user", new User(userName, age, regDate)); // model
 		return "ch02/ex02/userOut"; // view
 		
-		// @RequestParam을 안해도 작동함
+		// @RequestParam을 안해도 작동함 ( Parameter명과 변수명이 일치하면 )
 		// String userName, int age, LocalDate regDate를 User객체로 넣으면 Command가 됨 ▶ ex03
 	}
 }
