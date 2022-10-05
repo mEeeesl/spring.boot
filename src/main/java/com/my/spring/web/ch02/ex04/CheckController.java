@@ -57,7 +57,7 @@ public class CheckController {
 	/*
 	@PostMapping("checkbox")					//List도되고 ArrayList도됨
 	public String checkbox(@RequestParam("fruit") ArrayList<String> fruits) {
-		System.out.println(fruits);
+		System.out.println(fruits);					ArrayList<>는 생성자기능이 포함되는듯
 		
 		return null;
 	}

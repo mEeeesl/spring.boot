@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("ch02.ex06")
+@Controller("ch02.ex06")  			// DTO - Client || DOMAIN - DB
 @RequestMapping("ch02/ex06")
 public class UserController {
 	@GetMapping("login")			//	▼ 선택사항으로 만들기	▼ 리퀘스트 파라미터명과 쿠키명이 일치해야함?
@@ -32,7 +32,7 @@ public class UserController {
 			cookie.setMaxAge(5);
 			response.addCookie(cookie);
 		}
-		
+
 		return "ch02/ex06/logout";
 	}
 	

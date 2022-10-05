@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+					//	@GetMapping @PostMapping => 컨트롤러로 만들어주는것.
 @Controller
 @RequestMapping("ch02/ex01") // ● 공통 URL
 public class UserController { // ● returnType = ModelAndView , localhost/ch02/ex01/11 
@@ -21,15 +21,16 @@ public class UserController { // ● returnType = ModelAndView , localhost/ch02/
 	}
 	
 	// view나 model 1개를 여러 핸들러가 공유(user.jsp)해서 사용가능하다.
+	// ex) "11과 22"의 view는 동일 ("ch02/ex01/user") 
 	// 핸들러 만드는 옛날 방법
 	@GetMapping("21") // ● returnType = String , view Return ,  localhost/ch02/ex01/21
 	public String handler21(Model model) { // Container가 Model Type의 객체를 만들어서 넣어줌
 		model.addAttribute("user", new User("한아름", 21));
 		return "ch02/ex01/user"; //이 값을 ViewName으로 씀
-	}
+	} // model 준비 + view return
 	
 	@GetMapping("22")
-	public String handler22() { // model은 안보여주고 view만 보여줌, 창에 '/' 이것만 달랑나옴
+	public String handler22() { // view만 보여줌, 창에 '/' 이것만 달랑나옴
 		return "ch02/ex01/user";
 	}
 	

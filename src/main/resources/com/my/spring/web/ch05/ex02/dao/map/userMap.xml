@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC '-//mybatis.org/DTD Mapper 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
-<mapper namespace='com.my.spring.web.ch05.dao.map.UserMap'>
+<mapper namespace='com.my.spring.web.ch05.ex02.dao.map.UserMap'>
 <!-- application.properties에서 설정한, 
 	 mybatis.type-aliases-package=com.my.spring.**.domain -->
 	<select id='selectUsers' resultType='user'>

@@ -25,7 +25,7 @@ public class AppConfig implements WebMvcConfigurer {
 	      registry.addResourceHandler("attach/**").addResourceLocations("file:///" + attachPath + "/");  
 		// Context Path 후 URL이, 'res'로 시작하는 무엇이든지를 -> 리소스핸들러 -> WEB-INF/res/로 바꿔버리고
 		// -> Default Servlet(Tomcat)에게 넘기고, duke.gif를 찾아서 담고, Client에게 넘김
- 	    // 25줄 코드 ->첨부파일은 app 외부(밖)에있다. 파일생성작업은 window가 하기에, window가 알 수있게 지정해줘야한다.
+ 	    // 25줄 코드 ->첨부파일은 app 외부(밖)에있다. 파일생성작업은 window가 하기에, window가 알 수있게(file:///) 지정해줘야한다.
 	      
 	}
 }

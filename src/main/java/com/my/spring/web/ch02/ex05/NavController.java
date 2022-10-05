@@ -13,7 +13,10 @@ public class NavController {
 	} // return "target"; ▶ URL이 아닌, View Name 으로 인식한다. 
 	  // 접두사 'forward:'를 붙여주면 target은 URL이 된다.
 	  // forward는 URL이 forward URL을 사용한다.
-		
+
+	// forward는 내부 servlet ? server? 로 이동하는 것.
+	// redirect는 외부 server 로 이동가능
+	
 	@GetMapping("target")
 	public String target() {
 		return "ch02/ex05/target";

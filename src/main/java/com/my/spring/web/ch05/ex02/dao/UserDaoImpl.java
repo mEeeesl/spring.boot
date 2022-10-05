@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.my.spring.web.ch05.domain.User;
 import com.my.spring.web.ch05.ex02.dao.map.UserMap;
-
-@Repository("ch05.ex02.userDao") // 아이디 중복 피하기 ( 이전 예제에서 사용해서 )
+// 퍼시스턴스(persistence) - Repository?
+@Repository("ch05.ex02.userDao") // IOC + 아이디 중복 피하기 ( 이전 예제에서 사용해서 )
 public class UserDaoImpl implements UserDao {
 	@Autowired private UserMap userMap;
 	
